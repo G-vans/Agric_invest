@@ -67,3 +67,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "devise", "~> 4.9"
+#Africa's Talking API
+gem "africastalking-ruby"
+
+gem 'rack-cors'
+gem 'rest-client'
