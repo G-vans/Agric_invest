@@ -1,0 +1,27 @@
+<%= form_with(model: farmer) do |form| %>
+  <% if farmer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(farmer.errors.count, "error") %> prohibited this farmer from being saved:</h2>
+
+      <ul>
+        <% farmer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :contact, style: "display: block" %>
+    <%= form.text_field :contact %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
