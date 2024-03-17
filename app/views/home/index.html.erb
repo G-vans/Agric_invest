@@ -1,2 +1,157 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="homepage-container">
+  <div class="image-container">
+    <%= image_tag "banner-nafaka4.jpg", class: "background-image" %>
+    <div class="overlay-text">
+      <h1>Welcome to Agriculture Invest Africa Platform</h1>
+<p>Empowering agriculture across Africa through micro-investments.</p>
+<p>Join us in this journey of empowering farmers across Africa with alternative funding sources.</p>
+
+      <%= link_to "Browse Investments", investments_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+</div>
+<br />
+
+<hr class="line" />
+
+
+<div class="text-center">
+  <h1 style="font-size: 46px;">Check our Projects</h1>
+  
+</div>
+
+<% farmer_names = [
+        "Wanjohi",
+        "Tola",
+        "Adensami",
+        "Otieno",
+        "Wambui",
+        "Wanyama",
+        "Juma",
+        "Rashid",
+        "Trevor",
+        "Mandela"
+    ] %>
+
+<% locations = [
+  "Kenya",
+  "Nigeria",
+  "Ghana",
+  "Uganda",
+  "Kenya",
+  "Kenya",
+  "Tanzania",
+  "Tanazania",
+  "South Africa",
+  "South Africa"
+] %>
+
+
+<div class="text-center">
+  
+</div>
+
+<div class="row">
+  <% Investment.all.take(3).each_with_index do |investment, index| %>
+    <div class="col-md-4">
+      <div class="card">
+        <%= link_to investment_path(investment) do %>
+          <%= image_tag investment.image_url, class: "card-img-top fixed-size" %>
+        <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= investment.title %></h5>
+          <p class="card-text"><%= investment.description %></p>
+          <p class="card-text"><%= number_to_currency(investment.amount) %></p>
+          <p class="card-text farmer">
+          <% location = locations[index] %>
+          <%= location %>
+          </p>
+          <p class="card-text">
+            <% farmer_name = farmer_names[index] %>
+            <%= farmer_name %>
+            <span class="farmer">Verified</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br />
+<div class="text-center">
+  <%= link_to "View More", investments_path, class: "btn btn-primary" %>
+</div>
+<br />
+<br />
+
+<hr class="line" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2 class="text-center">How it Works</h2>
+
+      <div class="row ">
+        
+        <div class="col-md-3">
+          <div class="card card-container">
+          <%= image_tag "number-1.png", class:"icons-section" %>
+            <div class="card-body card-writings">
+              <h3 class="card-title">View Projects</h3>
+              <p class="card-text">Investors browse through the verified projects, read all the relevant information and choose the ones they want to invest in.</p>
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card card-container">
+          <%= image_tag "number-2.png", class:"icons-section" %>
+            <div class="card-body card-writings">
+              <h3 class="card-title">Chimoney API</h3>
+              <p class="card-text">Investors make payments to the their wallets using the Chimoney API.</p>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      
+        <div class="col-md-3">
+          <div class="card card-container">
+          <%= image_tag "number-3.png", class:"icons-section" %>
+            <div class="card-body card-writings">
+              <h3 class="card-title">Funding & Updates</h3>
+              <p class="card-text">Agric_Invest releases funds to farmers milestone based. SMS updates are also sent to investors</p>
+              
+            </div>
+          </div>
+        </div>
+    
+      
+
+      
+        <div class="col-md-3">
+          <div class="card card-container">
+          <%= image_tag "number-4.png", class:"icons-section" %>
+            <div class="card-body card-writings">
+              <h3 class="card-title">Payouts</h3>
+              <p class="card-text">Once the project is completed, We will issue payouts to investors via Chimoney API.</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="line" />
+
+<section class="about-section">
+  <div class="container">
+    <h2 class="text-center">About Us</h2>
+    <p>Agric_Invest is dedicated to fostering innovation in agriculture. Our platform connects visionary farmers with investors like you who share a passion for sustainable food production. With a team of experienced experts and a commitment to transparency, we're changing the way agriculture is funded and creating opportunities for growth.</p>
+  </div>
+</section>
+<br />
+<br />

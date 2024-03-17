@@ -1,14 +1,38 @@
-<p style="color: green"><%= notice %></p>
+<h1 class = "text-center">Investment Opportunities</h1>
+<br />
+<% farmer_names = [
+        "Wanjohi",
+        "Tola",
+        "Adensami",
+        "Otieno",
+        "Wambui",
+        "Wanyama",
+        "Juma",
+        "Rashid",
+        "Trevor",
+        "Mandela"
+    ] %>
 
-<h1>Investments</h1>
+<div class="row">
+  <% Investment.all.each_with_index do |investment, index| %>
+    <div class="col-md-4">
+      <div class="card fixed-height-card">
+        <%= link_to investment_path(investment) do %>
+          <%= image_tag investment.image_url, class: "card-img-top fixed-size" %>
+        <% end %>
+        <div class="card-body card-index">
+          <h5 class="card-title"><%= investment.title %></h5>
+          <p class="card-text"><%= investment.description %></p>
+          <p class="card-text"><%= number_to_currency(investment.amount) %></p>
 
-<div id="investments">
-  <% @investments.each do |investment| %>
-    <%= render investment %>
-    <p>
-      <%= link_to "Show this investment", investment %>
-    </p>
+          <p class="card-text">
+            <% farmer_name = farmer_names[index] %>
+            <%= farmer_name %>
+            <span class="farmer">Verified</span>
+          </p>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New investment", new_investment_path %>

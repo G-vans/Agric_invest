@@ -1,22 +1,43 @@
 <div id="<%= dom_id investment %>">
-  <p>
-    <strong>Title:</strong>
-    <%= investment.title %>
-  </p>
+  <% farmer_names = [
+      "Wanjohi",
+      "Tola",
+      "Adensami",
+      "Otieno",
+      "Wambui",
+      "Wanyama",
+      "Juma",
+      "Rashid",
+      "Trevor",
+      "Mandela"
+  ] %>
 
-  <p>
-    <strong>Description:</strong>
-    <%= investment.description %>
-  </p>
+  <div class="image-box">
+    <%= image_tag "nafaka2.jpg", class: "product-image" %>
+  </div>
+  
+  <div class="product-dets">
+    <h1>
+      <%= investment.title %>
+    </h1>
 
-  <p>
-    <strong>Amount:</strong>
-    <%= investment.amount %>
-  </p>
+    <p>
+      <strong>Description:</strong>
+      <%= investment.description %>
+    </p>
 
-  <p>
-    <strong>Image url:</strong>
-    <%= investment.image_url %>
-  </p>
+    <p>
+      <strong>Amount:</strong>
+      <%= number_to_currency(investment.amount) %>
+    </p>
 
+    <p>
+      <strong>Registered Farmer:</strong>
+      <%= farmer_names[investment.id - 1] %> <span class="farmer">Verified</span>
+    </p>
+    
+    <%= link_to "Back", investments_path, class: "btn btn-outline-secondary" %> | 
+    <%= link_to "Invest", invest_index_path, class: "btn btn-outline-success" %>
+    <br />
+  </div>
 </div>

@@ -1,14 +1,24 @@
 Rails.application.routes.draw do
-  resources :transactions
-  resources :investments
+  resources :transactions do
+    member do
+      get 'send_payout' 
+      post 'process_payout' 
+    end
+  end
   resources :farmers
+  get 'invest/index'
+  get 'invest/success'
+  get '/transactions/success', to: 'transactions#success', as: 'transactions_success'
+  post '/send_sms', to: 'invest#send_sms'
+  post '/stkpush', to: 'invest#stkpush'
+  # post 'send_sms', to: 'sms#send_sms', as: :send_sms
+  resources :investments do
+    member do
+      post 'invest'
+    end
+  end 
   devise_for :users
-  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
   root "home#index"

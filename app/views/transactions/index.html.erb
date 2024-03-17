@@ -1,14 +1,35 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Transactions</h1>
+<h1>Investors</h1>
 
-<div id="transactions">
-  <% @transactions.each do |transaction| %>
-    <%= render transaction %>
-    <p>
-      <%= link_to "Show this transaction", transaction %>
-    </p>
-  <% end %>
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Number</th>
+      <th>Investment</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.name %></td>
+        <td><%= transaction.email %></td>
+        <td><%= transaction.number %></td>
+        <td><%= Investment.find(transaction.investment_id).title %></td>
+        <td>
+          <%= link_to "Show more", transaction %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= link_to "New transaction", new_transaction_path %>
+
+<%
+=begin%>
+ <%= link_to "New transaction", new_transaction_path %> 
+<%
+=end%>

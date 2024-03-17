@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+    <%= form.label :name, "Your Name" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+  <div class="form-group">
+    <%= form.label :email, "Your Email Address" %>
+    <%= form.text_field :email, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :number, style: "display: block" %>
-    <%= form.text_field :number %>
+  <div class="form-group">
+    <%= form.label :number, "Your Phone Number (format - 254...)" %>
+    <%= form.text_field :number, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :investment_id, style: "display: block" %>
-    <%= form.text_field :investment_id %>
+  <div class="form-group">
+    <%= form.label :investment_id, "Select Investment" %>
+    <%= form.collection_select :investment_id, @investments, :id, :title, { prompt: "Select an Investment" }, class: "form-control" %>
   </div>
-
-  <div>
-    <%= form.submit %>
+<br />
+  <div class="form-group">
+    <%= form.submit "Initiate now via Chimoney", class: "btn btn-outline-success" %>
   </div>
 <% end %>

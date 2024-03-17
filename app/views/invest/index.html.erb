@@ -1,0 +1,106 @@
+<div>
+<!-- ARTICLE -->
+	<div class="container mt-5">
+    <div  class="mx-auto" style="width: 400px;"><h2>Invest With Wanjohi!</h2></div>
+	<div class="row" style="padding: 50px;">
+
+  <%
+=begin%>
+ <%= form_tag('/', method: :get) do %>
+  <div class="currency-switcher">
+    <select name="currency">
+      <option value="USD">USD</option>
+      <option value="KES">KES</option>
+      <option value="NGN">Naira</option>
+      <option value="CHIMONEY">Chimoney</option>
+    </select>
+  </div>
+<% end %> 
+<%
+=end%>
+
+  
+
+		<div class="col">
+        <%
+=begin%>
+ <div><button type="button" class="btn btn-outline-primary btn-lg" >KSH 145,000</button></div> 
+<%
+=end%>
+		<p style="padding-top: 30px;">Invest in Wanjohi's chicken rearing venture with an investment of $5. As an investor, you'll own a stake in Wanjohi's project and have the potential to reap substantial profits as the venture grows.
+		</p>
+        <!-- Number input -->
+        
+ <p>Please enter your phone number to start receiving status updates on your investment</p>
+
+<%= form_tag send_sms_path, method: :post do %>
+
+  <div>
+    <%= label_tag :phone_number, 'Phone Number:' %> <br />
+    <%= text_field_tag :phone_number, nil, placeholder: 'Enter phone number' %>
+  </div>
+  <br />
+
+  <%= submit_tag 'Send SMS', class: "btn btn-outline-primary" %>
+<% end %>
+<br />
+<p>Please enter your phone number to pay via MPESA</p>
+<%= form_tag stkpush_path, method: :post do %>
+
+  <div>
+    <%= label_tag :phoneNumber, 'Phone Number:' %> <br />
+    <%= text_field_tag :phoneNumber, nil, placeholder: 'Enter phone number' %>
+  </div>
+  <br />
+
+  <%= submit_tag 'Pay with Mpesa', class: "btn btn-outline-primary" %>
+  <br />
+  <br />
+  <br />
+  
+<% end %> 
+
+<%= link_to "Pay with Chimoney", new_transaction_path, class: "btn btn-outline-primary" %>
+        </div>
+        <div class="col">
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      How much profit should i expect
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      how do i make farm schedule visits
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Amount of shares received
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            
+        </div>
+        
+	</div>
+    
+</div>
+

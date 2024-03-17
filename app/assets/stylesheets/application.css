@@ -1,15 +1,165 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+ .homepage-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+  }
+  
+  .image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffff;
+    text-align: center;
+  }
+
+  .overlay-image {
+    position: fixed;
+    width: 85%;
+    height: 90%; 
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .overlay-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+    width: 40%; 
+    background-color: transparent; 
+    border: 2px solid #000000; 
+    padding: 20px;
+    box-shadow: 0 0 8px lightblue; 
+  }
+
+  .fixed-size {
+    width: 100%; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensures the image maintains its aspect ratio and fills the designated space */
+  }
+
+  /* brand icon amazon */
+  .brand-icon-amazon {
+    max-width: 70%;
+  }
+  .brand-icon-amazon2 {
+    max-width: 50%;
+  }
+
+  /*show image product*/
+.image-box {
+    float: left; /* To make the container float to the left of the screen */
+    /* width: 350px; Set the width of the container, adjust as needed */
+    height: 400px;
+    padding: 10px; /* Add some padding around the image */
+    /* margin-bottom: 80px; */
+  }
+  
+  /* Style for the image inside the container */
+  .product-image {
+    width: 100%;
+    /* display: block; */
+    margin-top: 0;
+    height: 80%;
+    border: none; /* Remove any border */
+  }
+  
+  .product-dets {
+    float: right;
+    max-width: 400px;
+    /* margin-left: 50px; */
+    /* border-left: 1px solid #ccc; Add a border to the left of the text container */
+    /* padding-left: 20px; Add some padding to the left of the text container */
+  }
+  
+  /* Add this rule to ensure text wraps within the max width */
+  .product-dets p {
+    white-space: normal;
+  }
+  .farmer {
+    font-size: 10px;
+    color: teal;
+    border-radius: 5px #000000;
+  }
+
+  .fixed-height-card {
+    max-height: 600px; /* Adjust the height as needed */
+    /* overflow-y: auto;
+    border: 1px solid #ccc; /* Optional border styling */
+    /* padding: 10px; Optional padding for spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+  }
+  
+  .border-box {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .currency-switcher {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .currency-switcher button {
+    margin: 0 5px;
+  }
+  
+  .currency-switcher select {
+    margin: 0 5px;
+  }
+ 
+  .card {
+  width: 100%; /* Ensure the card takes the full width of its container */
+  height: 100%;
+  }
+
+  .line {
+    margin: 20px auto; /* Adjust margin to center it vertically */
+    width: 50%; /* Adjust the width of the line as needed */
+    height: 1px; /* Adjust the height of the line as needed */
+    background-color: #000; /* Adjust the color of the line as needed */
+    border: none;
+  }
+
+  .card-container {
+    border: none;
+    width: 100%; /* Ensure the card takes the full width of its container */
+  height: 100%;
+  }
+  .icons-section {
+    font-size: 10px;
+    float: left;
+    height: 20%;
+    width: 20%;
+    padding-left: 10px;
+    padding-top: 20px;
+    display: flex;
+  }
+  .card-writings {
+    float: right;
+    padding-left: 50px;
+    
+  }
+  
