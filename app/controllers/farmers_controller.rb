@@ -2,13 +2,7 @@ class FarmersController < ApplicationController
   before_action :set_farmer, only: %i[ show edit update destroy ]
 
   # GET /farmers or /farmers.json
-  def index
-    @farmers = Farmer.all
-  end
 
-  # GET /farmers/1 or /farmers/1.json
-  def show
-  end
 
   # GET /farmers/new
   def new
